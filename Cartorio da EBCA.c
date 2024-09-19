@@ -107,7 +107,7 @@ int deletar()  //Funcao para ser usado dentro da int main, conforme a decisao do
 	remove(cpf);
 	
 	FILE * file;
-	file = fopen(cpf, "r"); // o r é de ler o arquivo
+	file = fopen(cpf, "r"); //O r é de ler o arquivo
 	
 	if(file == NULL)
 	{
@@ -124,15 +124,27 @@ int main () //Funcao
 {
 	int opcao=0; // Definindo as variaveis
 	int x=1; //Laco de repetição
+	char senhadigitada[10]="a";//Criando string para a senha, e dando a ela valor
+	int comparacao;
 	
-	for(x=1;x=1;)
-	{
+
 	
 		system("cls");	
 	
 		setlocale(LC_ALL, "Portuguese"); // Definindo as  linguagem
 	
-		printf("\n\n \t CARTÓRIO DA EBAC \n\n "); //Msg e menu de entrada
+		printf("\n\n   CARTÓRIO DA EBAC \n\n"); //Msg e menu de entrada
+		printf("Login de administrador! \nDigite sua senha: ");
+		scanf("%s", senhadigitada);
+		
+		comparacao = strcmp(senhadigitada,"admin");
+		
+		if(comparacao == 0)
+		{
+		system ("cls");
+				
+		for(x=1;x=1;)
+		{
 		printf("Escolha a opção deseja do menu: \n\n"); 
 		printf("\t1 - Registrar nomes\n"); 
 		printf("\t2 - Consultar nomes\n"); 
@@ -167,7 +179,13 @@ int main () //Funcao
 			printf("Essa opção não está disponivel!\n");
 			system("pause");
 			break;
+			//fim da seleção
 
 		}
 	}
+}
+			else
+   		printf("Senha incorreta");
+
+   		
 }
